@@ -11,7 +11,7 @@ const getTweets = async searchTerm => {
         }
       )
     
-      return responses.data.statuses
+    return responses.data.statuses.map(tweet => ({ text: response.text }))
 }
 
 module.exports = getTweets
