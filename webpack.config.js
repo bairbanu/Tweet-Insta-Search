@@ -2,7 +2,7 @@ const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 config = {
-  entry: "./frontend/index.js",
+  entry: ["babel-polyfill", "./frontend/index.js"],
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "build")

@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
-const HelloWorld = () => {
-    return <h1> Hello World! </h1>
+import TweetSearch from './components/TweetSearch'
+
+const TweetInstaSearch = () => {
+    return <TweetSearch />
 }
 
-ReactDOM.render(<HelloWorld />, document.getElementById('root'))
+ReactDOM.render(<TweetSearch />, document.getElementById('root'))
