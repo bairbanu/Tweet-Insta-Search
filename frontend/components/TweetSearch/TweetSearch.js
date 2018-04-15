@@ -1,29 +1,30 @@
 import _ from 'lodash'
 import React, { Component } from 'react'
-import axios from 'axios'
 
 import TweetList from '../TweetList/TweetList'
 import './tweetSearch.css'
 
+import requestTweets from '../../model/requestTweets'
+
 export default class TweetSearch extends Component {
     state = {
         value: '',
-        tweetList: []
+        tweets: []
     }
 
     onSubmitSearch = async event => {
         event.preventDefault()
 
-        const { data } = await axios.get(`http://localhost:3000/tweets?searchTerm=${this.state.value}`)
-        this.setState({ tweetList: data })
+        const tweets = await requestTweets(this.state.value)
+        this.setState({ tweets })
     }
 
     instaSearch = event => {
         this.setState({ value: event.target.value })
 
         setTimeout(async () => {
-            const { data } = await axios.get(`http://localhost:3000/tweets?searchTerm=${this.state.value}`)
-            this.setState({ tweetList: data })
+            const tweets = await requestTweets(this.state.value);
+            this.setState({ tweets });
         }, 500)
     }
 
@@ -39,7 +40,7 @@ export default class TweetSearch extends Component {
                     <button style={{ display: 'none' }}> For UX - just press enter </button>
                 </form>
 
-                <TweetList tweets={ this.state.tweetList } />
+                <TweetList tweets={ this.state.tweets } />
             </div>
         )
     }
