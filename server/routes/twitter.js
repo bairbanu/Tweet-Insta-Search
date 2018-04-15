@@ -8,6 +8,12 @@ const getTweets = require('../../API/tweets')
 
 router.get('/', async (req, res) => {
     const { searchTerm } = req.query
+    
+    if (searchTerm === '') {
+        res.end()
+        return
+    }
+
     const tweets = await getTweets(searchTerm)
     res.send(tweets)
 })
