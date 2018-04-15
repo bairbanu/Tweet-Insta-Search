@@ -12,7 +12,7 @@ config = {
       {
         use: "babel-loader",
         test: /\.js$/,
-        exclude: /node_modules/
+        exclude: [/node_modules/, /server/]
       },
       {
         use: ["style-loader", "css-loader"],
