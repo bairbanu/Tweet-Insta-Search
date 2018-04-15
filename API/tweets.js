@@ -7,7 +7,6 @@ const getTweets = async searchTerm => {
       .get(`https://api.twitter.com/1.1/search/tweets.json?q=${searchTerm}&result_type=recent&count=10`,
         { headers: {
             'Authorization': "Bearer " + BEARER_ACCESS_TOKEN,
-            'Access-Control-Allow-Origin': "*"
           }
         }
       )
