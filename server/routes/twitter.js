@@ -10,7 +10,6 @@ router.get('/', async (req, res) => {
     const { searchTerm } = req.query
     const tweets = await getTweets(searchTerm)
     res.send(tweets)
-    res.end()
 })
 
 module.exports = router
