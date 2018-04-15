@@ -4,7 +4,8 @@
 }
 
 input {
-    width: 100%;
+    display: inline-block;
+    width: 90%;
     line-height: 2;
     margin-top: 15px;
     text-align: center;

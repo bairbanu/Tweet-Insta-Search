@@ -26,6 +26,7 @@ export default class TweetSearch extends Component {
                         onChange={ event => this.setState({ value: event.target.value })} 
                         placeholder='Instantly search latest tweets...'
                     />
+                    <button style={{ display: 'none' }}> For UX - just press enter </button>
                 </form>
 
                 <TweetList tweets={ this.state.tweetList } />
