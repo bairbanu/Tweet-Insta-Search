@@ -6,12 +6,13 @@ const getTweets = async searchTerm => {
     const responses = await axios
       .get(`https://api.twitter.com/1.1/search/tweets.json?q=${searchTerm}&result_type=recent&count=10`,
         { headers: {
-            authorization: "Bearer " + BEARER_ACCESS_TOKEN
+            'Authorization': "Bearer " + BEARER_ACCESS_TOKEN,
+            'Access-Control-Allow-Origin': "*"
           }
         }
       )
     
-    return responses.data.statuses.map(tweet => ({ text: response.text }))
+    return responses.data.statuses.map(tweet => ({ text: tweet.text }))
 }
 
 module.exports = getTweets

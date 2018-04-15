@@ -8,8 +8,11 @@ const getTweets = require('../../API/tweets')
 
 router.post('/', urlencodedParser, async (req, res) => {
     const { searchTerm } = req.body
-    const tweets = await getTweets(searchTerm)
-    res.send(tweets)
+    console.log('this is the req.body:::', req.body)
+    // const tweets = await getTweets(searchTerm)
+    // console.log('these are the tweets:::', tweets)
+    // res.send(tweets)
+    res.end()
 })
 
 module.exports = router

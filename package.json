@@ -5,7 +5,7 @@
   "main": "./server/server.js",
   "scripts": {
     "webpack:dev": "webpack --mode=development",
-    "frontend:server": "webpack-dev-server",
+    "frontend:dev": "webpack-dev-server --mode=development",
     "backend:dev": "nodemon server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,6 +22,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "html-webpack-plugin": "^3.2.0",
@@ -32,6 +33,8 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",
