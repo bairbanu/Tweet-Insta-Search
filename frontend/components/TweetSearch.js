@@ -12,14 +12,9 @@ export default class TweetSearch extends Component {
     onSubmit = async event => {
         event.preventDefault()
 
-        // const config = {
-        //     method: 'POST',
-        //     url: 'http://localhost:3000/tweets',
-        //     data: { searchTerm: this.state.value }
-        // }
-
         const tweets = await axios.get(`http://localhost:3000/tweets?searchTerm=${this.state.value}`)
-        // this.setState({ tweetList: tweets.data })
+        console.log('these are the tweets:::', tweets)
+        this.setState({ tweetList: tweets.data })
     }
 
     render() {
