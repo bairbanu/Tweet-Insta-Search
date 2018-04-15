@@ -1,0 +1,22 @@
+p {
+    margin-top: 20px;
+    font-size: 1.3em;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+ul > li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    word-wrap: break-word;
+    font-size: 1.3em;
+    border-bottom: 0.5px dotted gray;
+}
+
+ul > li:last-child {
+    border-bottom: none;
+}

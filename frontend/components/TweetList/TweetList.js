@@ -1,4 +1,5 @@
 import React from 'react'
+import './tweetList.css'
 
 const TweetList = ({ tweets }) => {
     const displayList = tweets.length === 0

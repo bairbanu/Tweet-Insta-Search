@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
-import TweetSearch from './components/TweetSearch'
+import TweetSearch from './components/TweetSearch/TweetSearch'
 
 const TweetInstaSearch = () => {
     return <TweetSearch />
 }
 
-ReactDOM.render(<TweetSearch />, document.getElementById('root'))
+ReactDOM.render(<TweetInstaSearch />, document.getElementById('root'))
