@@ -30,7 +30,7 @@ describe('Frontend -->', () => {
       const wrapper = shallow(<TweetSearch />)
       const component = wrapper.instance()
       sinon.spy(component, 'onSubmitSearch')
-      component.onSubmitSearch({ preventDefault: () => {}})
+      component.onSubmitSearch({ target: { value: 'test'}, preventDefault: () => {}})
       expect(component.onSubmitSearch).to.have.property('calledOnce', true)
   })
 

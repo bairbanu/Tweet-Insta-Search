@@ -15,17 +15,13 @@ export default class TweetSearch extends Component {
     onSubmitSearch = async event => {
         event.preventDefault()
 
-        const tweets = await requestTweets(this.state.value)
-        this.setState({ tweets })
-    }
-
-    instaSearch = event => {
-        this.setState({ value: event.target.value })
-
-        // setTimeout(async () => {
-        //     const tweets = await requestTweets(this.state.value);
-        //     this.setState({ tweets });
-        // }, 500)
+        try {
+            const tweets = await requestTweets(this.state.value)
+            this.setState({ tweets })
+        } 
+        catch (error) {
+            // add handler for production code
+        }
     }
 
     render() {
@@ -34,7 +30,7 @@ export default class TweetSearch extends Component {
                 <form onSubmit={ this.onSubmitSearch }>
                     <input 
                         value={ this.state.value } 
-                        onChange={ this.instaSearch } 
+                        onChange={ event => this.setState({ value: event.target.value }) } 
                         placeholder='Instantly search latest tweets...'
                     />
                     <button style={{ display: 'none' }}> For UX - just press enter </button>
