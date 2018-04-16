@@ -4,10 +4,11 @@
   "description": "Given a term, obtain the 10 most recent tweets",
   "main": "./server/server.js",
   "scripts": {
+    "start": "webpack --mode=development && open ./build/index.html && node ./server/server.js",
+    "test": "mocha --require babel-register --require babel-polyfill --require ignore-styles",
     "webpack:dev": "webpack --mode=development",
     "frontend:dev": "webpack-dev-server --mode=development",
-    "backend:dev": "nodemon server/server.js",
-    "test": "mocha --require babel-register --require babel-polyfill --require ignore-styles"
+    "backend:dev": "nodemon ./server/server.js"
   },
   "repository": {
     "type": "git",
