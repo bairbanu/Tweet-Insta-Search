@@ -1,3 +1,7 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .app-container {
     width: 50%;
     margin: 0 auto;
