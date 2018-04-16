@@ -14,6 +14,8 @@ app.use('/tweets', twitterAPI)
 app.use('*', notFound)
 app.use(errorHandler)
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log(`Twitter Insta-Search server is listening on port: ${port}`)
 })
+
+module.exports = server

@@ -6,10 +6,16 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 const getTweets = require('../../API/tweets')
 
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
     const { searchTerm } = req.query
-    const tweets = await getTweets(searchTerm)
-    res.send(tweets)
+
+    try {
+        const tweets = await getTweets(searchTerm)
+        res.send(tweets)
+    } catch (error) {
+        console.log('A error occured while retrieving tweets')
+        next(error)
+    }
 })
 
 module.exports = router
