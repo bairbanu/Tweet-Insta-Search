@@ -1,16 +1,15 @@
 import React from 'react'
 import './tweetList.css'
 
-const TweetList = ({ tweets }) => {
-    const displayList = tweets.length === 0
-    ? <p> Search will be displayed here... </p>
-    : (
-        <ul>
-            {
-                tweets.map((tweet, index) => <li key={ index }> { tweet.text } </li> ) 
-            }
-        </ul>
-      )
+const TweetList = ({ tweets, searchTerm }) => {
+    let displayList
+
+    if (searchTerm === '' && tweets.length === 0)
+        displayList = <p> Search will be displayed here... </p>
+    else if (searchTerm !== '' && tweets.length === 0)
+        displayList = <p> Press enter to see tweets... Or try another search if no results :) </p>
+    else 
+        displayList = ( <ul> { tweets.map((tweet, index) => <li key={ index }> { tweet.text } </li> ) } </ul> )
 
     return (
         <div>

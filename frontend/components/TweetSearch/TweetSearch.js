@@ -22,10 +22,10 @@ export default class TweetSearch extends Component {
     instaSearch = event => {
         this.setState({ value: event.target.value })
 
-        setTimeout(async () => {
-            const tweets = await requestTweets(this.state.value);
-            this.setState({ tweets });
-        }, 500)
+        // setTimeout(async () => {
+        //     const tweets = await requestTweets(this.state.value);
+        //     this.setState({ tweets });
+        // }, 500)
     }
 
     render() {
@@ -40,7 +40,7 @@ export default class TweetSearch extends Component {
                     <button style={{ display: 'none' }}> For UX - just press enter </button>
                 </form>
 
-                <TweetList tweets={ this.state.tweets } />
+                <TweetList tweets={ this.state.tweets } searchTerm={ this.state.value }/>
             </div>
         )
     }
