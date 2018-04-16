@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import './tweetList.css'
 
 const TweetList = ({ tweets, searchTerm }) => {
@@ -16,6 +18,11 @@ const TweetList = ({ tweets, searchTerm }) => {
             { displayList }
         </div>
     )
+}
+
+TweetList.propTypes ={
+    tweets: PropTypes.array.isRequired,
+    searchTerm: PropTypes.string
 }
 
 export default TweetList
